@@ -29,6 +29,7 @@ button {
   text-transform: uppercase;
   size: 70px 70px;
   border: 2px solid wheat;
+  width: 50%;
 }
 h1 {
   background-color: burlywood;
@@ -36,6 +37,12 @@ h1 {
   font-weight: 400;
   padding: 20px;
   text-transform: capitalize;
+  height: 10%;
+  width: 40%;
+}
+input {
+  width: 50%;
+  height: 10%;
 }
 /* .heading_style {
   text-align: center;
