@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SlotM from './Slotmach';
 
 
 const App =()=>{
+
+    const purple="purple";
+   const [bg,setBg]=useState(purple);
+  const [name,setName]=useState("click me");
+
+   const bgChange=()=>{
+//console.log("clicked");
+            let newcolor="#34954e";
+            setBg(newcolor);
+            setName("ph yes 🥇");
+    };
+const bgBack=()=>{
+    let newcolo="purple";
+    setBg(newcolo);
+    setName("aodos 🥈");
+
+}
     return(
     <>
-            <h1 className="heading_style"> 🎰Welcome to <span style={  {fontWeight:"bold"} }>Slot machine  game</span> 🎰  </h1>
-           <div>
-           <SlotM  x= '😃' y= '🥉'  z= '😃' /> 
-           <SlotM x= '😃'  y= '😃'  z= '😃'/> 
-           <SlotM  x= '😃'  y= '😃' z= '👍' /> 
+    <div style={ {backgroundColor: bg} }>
+           <button onMouseEnter={bgChange}  onMouseLeave={ bgBack }> {name} </button>
            </div>
     </>
     );
