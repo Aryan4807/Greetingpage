@@ -8,3 +8,7 @@ ReactDOM.render(
   <App />
   , document.getElementById('root')
 )
+
+const full=["aryan","gupta"];
+const bio=[1,...full,"male"];
+console.log(bio)

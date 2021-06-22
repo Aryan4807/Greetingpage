@@ -5,7 +5,8 @@ const [Fullname, setFullname]=useState({
     fName:"",
     lName:"",
     email:"",
-    Number:""
+    Number:"",
+    qua:""
 });
 
     const inputEvent=(event)=>{
@@ -17,44 +18,48 @@ const [Fullname, setFullname]=useState({
     // const name=event.target.name;
 const {value,name}=event.target;
     setFullname((prevalue)=>{
-   // console.log(prevalue);    
-            if(name==="fName")
-            {
-                return{
-                    fName: value,
-                    lName : prevalue.lName,
-                    email:prevalue.email,
-                    Number:prevalue.Number,
-            }
-            }
-            else  if(name==="lName")
-            {
-                return{
-                    fName: prevalue.fName,
-                    lName : value,
-                    email:prevalue.email,
-                    Number:prevalue.Number,
-            }
-            }
-            else  if(name==="email")
-            {
-                return{
-                    fName: prevalue.fName,
-                    lName :prevalue.lName ,
-                    email:value,
-                    Number:prevalue.Number,
+    console.log(prevalue);
+    return{
+        ...prevalue,
+        [name]:value,
+    }    
+//             if(name==="fName")
+//             {
+//                 return{
+//                     fName: value,
+//                     lName : prevalue.lName,
+//                     email:prevalue.email,
+//                     Number:prevalue.Number,
+//             }
+//             }
+//             else  if(name==="lName")
+//             {
+//                 return{
+//                     fName: prevalue.fName,
+//                     lName : value,
+//                     email:prevalue.email,
+//                     Number:prevalue.Number,
+//             }
+//             }
+//             else  if(name==="email")
+//             {
+//                 return{
+//                     fName: prevalue.fName,
+//                     lName :prevalue.lName ,
+//                     email:value,
+//                     Number:prevalue.Number,
 
-            }
-            }
-            else  if(name==="Number")
-            {
-                return{
-                    fName: prevalue.fName,
-                    lName : prevalue.lName,
-                    email:prevalue.email,
-                    Number:value,
-            }
-            }
+//             }
+//             }
+//             else  if(name==="Number")
+//             {
+//                 return{
+//                     fName: prevalue.fName,
+//                     lName : prevalue.lName,
+//                     email:prevalue.email,
+//                     Number:value,
+//             }
+//             }
 })
         }
   
@@ -99,6 +104,13 @@ const {value,name}=event.target;
              value={Fullname.Number}
             >
              </input>
+             <input type="text" 
+             placeholder="enter your qualification" 
+            name="qua"
+             onChange={inputEvent} 
+                  value={Fullname.qua}
+                 >
+                  </input>
         <button type='submit' >click me</button>
         </div>
         </form>  </>
